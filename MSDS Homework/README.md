@@ -1,10 +1,10 @@
 # MSDS Homework
-A directory to store the files for Unit 4 homework
+A directory to store the files for MSDS 6306 Unit 4 homework assignment
 
 
-### More information of the individual files
+## More information on the individual files
 
-"Assignment04.pdf" - Unit 4 Homework Assignment questions assigned by Professor John Santerre
+"Assignment04.pdf" - Unit 4 assignment questions assigned by Professor John Santerre
 
 "MSDS 6306_Unit 4 Assignment.Rmd" - R Markdown script for Unit 4 Assignment that includes question 1-3
 
