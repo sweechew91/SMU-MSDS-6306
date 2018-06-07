@@ -14,4 +14,6 @@ A directory to store the files for MSDS 6306 Unit 4 homework assignment
 
 "Swirl Module 15.txt" - This text file includes the Swirl output for the completion of module 15 for homework question 4
 
-"college_recent_grads.csv" - the dataset obtained from "fivethirtyeight" package created by Albert Y. Kim, Chester Ismay, and Jennifer Chunn (last updated date: 2018-02-11) 
+"college_recent_grads.csv" - the dataset obtained from "fivethirtyeight" package created by Albert Y. Kim, Chester Ismay, and Jennifer Chunn (last updated date: 2018-02-11). 
+
+An R package that provides access to the code and data sets published by FiveThirtyEight can be found here: https://github.com/fivethirtyeight/data. 
