@@ -1,0 +1,74 @@
+---
+title: "MSDS 6306_Unit 4 Assignment"
+author: "Swee K Chew"
+date: "06/07/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1 
+### FiveThirtyEight Data 
+
+#### a. Load the "fivethirtyeight" package after the installation
+```{r recent_grads1, echo=TRUE}
+library(fivethirtyeight)
+```
+
+#### b. Assign the 22nd dataset, "college_recent_grads", to an object named "df"
+```{r recent_grads2, echo=TRUE}
+data(college_recent_grads)
+df <- college_recent_grads
+```
+
+#### c. URL to the related news story from the a more detailed list of the dataset
+```{r recent_grads3, echo=TRUE}
+data(package = "fivethirtyeight")
+vignette("fivethirtyeight", package = "fivethirtyeight")
+```
+URL link: https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/
+
+
+#### d. Dimensions and column names of the data frame, "df"
+```{r recent_grads4, echo=TRUE}
+dim(df)
+colnames(df)
+```
+
+## Question 2
+### Data Summary
+
+#### a. Column names and counts of columns of the data frame, "df"
+```{r recent_grads5, echo=TRUE}
+colnames(df)
+ncol(df)
+```
+
+#### b. Counts of each unique major_category and the frequency in the dataset
+```{r recent_grads6, echo=TRUE}
+library(plyr)
+major_count <- count(df,"major_category")
+major_count
+```
+
+#### c. Barplot of major_count 
+```{r recent_grads7, echo=TRUE}
+major_count2 <- table(df$major_category)
+par(las=2, mar=c(4,15,4,6))
+barplot(major_count2, main = "Numbers of Majors within Each Major Category \nfor Recent College Graduates", xlab = "Numbers of Majors", ylab = "Major Category", xlim = c(0,30), col = "blue", horiz = TRUE) 
+```
+
+#### d. Write the "college_recent_grads" dataset to a csv file 
+```{r recent_grads8, echo=TRUE}
+write.csv(df, file = "college_recent_grads.csv",row.names=FALSE)
+```
+
+## Question 3
+### CodeBook
+#### A repository on GitHub for SMU MSDS Homework
+
+GitHub link: https://github.com/sweechew91/SMU-MSDS-6306
+
+
