@@ -2,7 +2,7 @@
 A directory to store the files for MSDS 6306 Unit 4 homework assignment
 
 
-## More information on the individual files
+## More Information on the Individual Files
 
 "Assignment04.pdf" - Unit 4 assignment questions assigned by Professor John Santerre
 
