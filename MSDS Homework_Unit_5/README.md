@@ -12,7 +12,7 @@ A directory to store the files for MSDS 6306 Unit 5 homework assignment
 
 "MSDS_6306_Unit_5_Assignment.html" - Matching HTML file for Unit 5 assignment
 
-"top_ten_girl_names.csv" - An output csv file that lists the top 10 girl names and the total number of childern from the two 
+"top_ten_girl_names.csv" - An output csv file that lists the top 10 girl names and the total number of children from the two 
 
 ## Data Source
 The two data files, "yob2015.txt" and "yob2016.txt" were provided by the instructor via Dropbox. Each file contains a series of popular children’s names born in the year 2015 and 2016 in the United States, respectively. Each consists of three columns with a first name, a gender, and the amount of children given that name.
