@@ -1,0 +1,93 @@
+---
+title: "MSDS 6306_Unit 5 Assignment"
+author: "Swee K Chew"
+date: "06/12/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Question 1 
+### Data Munging 
+
+#### a. Import 'yob2016.txt' file and assign the dataset to an object 'df', rename column names
+```{r babynames1}
+df <- read.table("/Users/swee/Desktop/SMU/Summer 2018/MSDS 6306 - Doing DS/dataset/yob2016.txt", sep= ";", header = TRUE)
+colnames(df) <- c("First_Name", "Gender", "Number_of_Children")
+```
+
+#### b. Summary and structure of 'df'
+```{r babynames2}
+summary(df)
+str(df)
+```
+
+#### c. Find and display the misspelled record that ends with 'yyy'
+```{r babynames3}
+grep("yyy$",df$First_Name)
+df[211,]
+```
+
+#### d. Remove the observation with the misspelled name and assign the remanining dataset to an object 'y2016'
+```{r babynames4}
+y2016 <- df[-211,]
+```
+
+## Question 2
+### Data Merging
+
+#### a. Import 'yob2015.txt' file and assign the dataset to an object 'y2015', rename column names
+```{r babynames5}
+y2015 <- read.table("/Users/swee/Desktop/SMU/Summer 2018/MSDS 6306 - Doing DS/dataset/yob2015.txt", sep= ",", header = FALSE)
+colnames(y2015) <- c("First_Name", "Gender", "Number_of_Children")
+```
+
+#### b. Display the last ten rows of the dataframe, 'y2015'
+```{r babynames6}
+tail(y2015,10)
+```
+
+The last ten rows contain all male first names that begin with 'Z' and there are five children for each given name. 
+
+#### c. Merge 'y2016' and 'y2015' by 'First Name' column and assign it to an object 'final'. Then check to confirm that there is no NA values in both "Number_of_Children" columns 
+```{r babynames7}
+final <- merge(y2016,y2015, by="First_Name")
+colSums(is.na(final))
+```
+
+## Question 3
+### Data Summary
+
+#### a. Sum the amount of children in 2015 and 2016, and assign it to a column name called 'Total'
+```{r babynames9}
+final$Total <- final$Number_of_Children.x + final$Number_of_Children.y
+```
+
+#### b. Sort the data by 'Total' column and display the top 10 most popular names
+```{r babynames10}
+sort_data <- final[order(-final$Total),]
+top10 <- sort_data[c(1:10),]
+top10
+```
+
+#### c. Subset the dataset to contain only those with girl names and display the top 10 most popular girl names
+```{r babynames11}
+girl_names <- sort_data[ which(sort_data$Gender.x == 'F'), ]
+top10_girls <- girl_names[c(1:10), c(1,6)]
+top10_girls
+```
+
+#### d. Write the top 10 girl names and their totals to a csv file 
+```{r babynames12}
+write.csv(top10_girls, file = "top_ten_girl_names.csv", row.names = FALSE)
+```
+
+## Question 4
+### CodeBook
+#### A repository on GitHub for SMU MSDS Homework
+
+GitHub link: https://github.com/sweechew91/SMU-MSDS-6306
+
+
